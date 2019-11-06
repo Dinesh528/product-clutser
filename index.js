@@ -1,7 +1,7 @@
 const express = require('express');
 const app =express();
 
-const config= require('./DB');
+const config= require('./DB.js');
 
 //help us to read the data from post and put requests
 const bodyParser = require('body-parser');
@@ -19,7 +19,7 @@ app.use(cors());
 
 const proRouter = require('./product.route');
 
-mongoose.connect(config.DB,{useNewUrlParser:true})
+mongoose.connect(config.DBname,{useNewUrlParser:true})
         .then(res=>{
             console.log('Database successfully connected..');
         },
